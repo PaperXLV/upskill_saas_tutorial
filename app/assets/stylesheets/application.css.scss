@@ -25,6 +25,14 @@ h1, h2, h3, p {
     font-family: 'Josefin Sans', sans-serif;
 }
 
+.navbar-default .navbar-toggle {
+    border: 2px solid #386d75;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background : #386d75;
+}
+
 // Background Gradient
 .navbar, .home-callout {
     // Gradient by @_ighost at uiGradients.com
