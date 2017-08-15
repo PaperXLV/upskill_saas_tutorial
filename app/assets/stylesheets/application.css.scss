@@ -21,7 +21,7 @@
 @import 'font-awesome';
 
 // Font Style
-h1, h2, h3 {
+h1, h2, h3, p {
     font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -41,6 +41,10 @@ h1, h2, h3 {
         color: #386d75;
         opacity: 0.75;
     }
+}
+
+.navbar-brand {
+    font-weight: 700;
 }
 
 .home-callout {
