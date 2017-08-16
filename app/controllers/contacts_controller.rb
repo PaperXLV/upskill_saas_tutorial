@@ -1,7 +1,13 @@
 class ContactsController < ApplicationController
+   
+   # GET request to /contact-us
+   # Defined in config/routes.rb
+   
    def new
       @contact = Contact.new
    end
+   
+   # POST request /contacts
    
    def create
       @contact = Contact.new(contact_params)
@@ -18,6 +24,8 @@ class ContactsController < ApplicationController
       end
    end
    
+   # To collect data from form, we need to use
+   # strong parameters and whitelist the form fields
    private
       def contact_params
          params.require(:contact).permit(:name, :email, :comment)
