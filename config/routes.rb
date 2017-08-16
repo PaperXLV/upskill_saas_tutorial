@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
   # Determines routes 
+  # Use rails routes in console to find prefixes to use in routing for links
+  devise_for :users
   root to: 'pages#home'
   get 'about', to: 'pages#about'
   resources :contacts, only: :create
