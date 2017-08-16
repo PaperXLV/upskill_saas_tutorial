@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+# With gems just like, look at the documentation for installation, its easy
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.0'
@@ -36,6 +37,9 @@ gem 'font-awesome-sass', '4.6.2'
 
 # Use Hirb for better database table display in console
 gem 'hirb', '0.7.3'
+
+# Use Devise for user authentication
+gem 'devise', '4.2.0'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
