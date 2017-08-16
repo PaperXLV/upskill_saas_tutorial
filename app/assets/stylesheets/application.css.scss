@@ -21,7 +21,7 @@
 @import 'font-awesome';
 
 // Font Style
-h1, h2, h3, p {
+h1, h2, h3, h4, p {
     font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -50,6 +50,22 @@ h1, h2, h3, p {
         color: #386d75;
         opacity: 0.75;
     }
+}
+
+.home-signup-links {
+    margin-top: 30px;
+}
+
+.home-signup-height {
+    height: 400px;
+}
+
+.force-to-bottom {
+    position: absolute;
+    bottom: 50px;
+    margin-left: -16px;
+    width: 90%;
+    
 }
 
 // Remove alerts from devise

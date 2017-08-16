@@ -1,0 +1,4 @@
+# Sign up Requirements
+# User should see both links for basic and pro plan on home page
+# Basic plan -> sign up
+# Pro plan -> new sign up that also collects credit card
