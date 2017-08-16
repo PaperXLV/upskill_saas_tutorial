@@ -52,6 +52,11 @@ h1, h2, h3, p {
     }
 }
 
+// Remove alerts from devise
+.alert-notice {
+    display: none;
+}
+
 .navbar-brand {
     font-weight: 700;
 }
