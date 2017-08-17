@@ -3,7 +3,7 @@
 $(document).on('turbolinks:load', function() {
     var proForm = $('#pro_form');
     var cenaForm = $('#cena_form');
-    var submitBtn = $('#form-submit-btn')
+    var submitBtn = $('#form-submit-btn');
     
     Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content') );
 
@@ -32,7 +32,7 @@ $(document).on('turbolinks:load', function() {
         }
         
         if (!Stripe.card.validateExpiry(expMonth, expYear)) {
-            error = true
+            error = true;
             alert('The expiration date appears to be invalid');
         }
         
