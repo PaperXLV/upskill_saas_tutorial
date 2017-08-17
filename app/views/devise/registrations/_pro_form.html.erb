@@ -3,6 +3,7 @@
 
   <%= hidden_field_tag 'plan', params[:plan] %>
 
+  <!-- f.label will save to database, label_tag will not. Security, don't wanna save the card #'s -->
   <div class="field form-group">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Example@email.com' %>
