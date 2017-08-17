@@ -25,6 +25,10 @@ h1, h2, h3, h4, p {
     font-family: 'Josefin Sans', sans-serif;
 }
 
+html, body, .view {
+    height: 100%;
+}
+
 .navbar-default .navbar-toggle {
     border: 2px solid #386d75;
     
@@ -50,6 +54,14 @@ h1, h2, h3, h4, p {
         color: #386d75;
         opacity: 0.75;
     }
+}
+
+.view {
+    background: url("http://wallpapersdsc.net/wp-content/uploads/2017/03/John-Cena-Background-.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .home-signup-links {
