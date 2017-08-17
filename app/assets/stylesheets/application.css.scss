@@ -68,11 +68,23 @@ html, body, .view {
 }
 
 .view {
-    background: url("http://wallpapersdsc.net/wp-content/uploads/2017/03/John-Cena-Background-.jpg")no-repeat center center fixed;
+    
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.john-cena {
+    background: url("http://wallpapersdsc.net/wp-content/uploads/2017/03/John-Cena-Background-.jpg")no-repeat center center fixed;
+}
+
+.river-sunrise {
+    background: url("http://s1.1zoom.me/b5050/333/Rivers_Sunrises_and_459646_2048x1152.jpg")no-repeat center center fixed;
+}
+
+.sky {
+    background: url("http://androidwallpape.rs/content/02-wallpapers/131-night-sky/wallpaper-2707591.jpg")no-repeat center center fixed;
 }
 
 .white-text {

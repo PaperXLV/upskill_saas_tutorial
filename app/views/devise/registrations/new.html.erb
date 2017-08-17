@@ -1,24 +1,28 @@
 <% if params[:plan] == '3' %>
-  <div class="container-fluid view">
+  <div class="container-fluid view john-cena">
     <div class="full-bg-img flex-center">
     </div>
-  <% else %>
-<div class="container-fluid">
+<% elsif params[:plan] == '2' %>
+  <div class="container-fluid view river-sunrise">
+    <div class="full-bg-img flex-center">
+    </div>
+<% else %>
+  <div class="container-fluid view sky">
+    <div class="full-bg-img flex-center">
+    </div>  
 <% end %>
   <div class="row">
-    
-    
     <div class="col-md-4 col-md-offset-6">
       <div class="text-center">
         <% if params[:plan] == '2' %>
-          <h1>Pro Account</h1>
-          <h3>Sign up for the pro account for $10/month and gain access to the community, priority search, and contact information.</h3>
+          <h1 class="white-text">Pro Account</h1>
+          <h3 class="white-text">Sign up for the pro account for $10/month and gain access to the community, priority search, and contact information.</h3>
         <% elsif params[:plan] == '3' %>
           <h1 class="white-text">John Cena Account</h1>
           <h3 class="white-text">Sign up for the John Cena account and become a literal god for $50/month. Gain access to the community, priority search, contact information, and become John Cena himself.</h3>
         <% else %>
-          <h1>Basic Account</h1>
-          <h3>Sign up for the free basic account and gain access to the community</h3>
+          <h1 class="white-text">Basic Account</h1>
+          <h3 class="white-text">Sign up for the free basic account and gain access to the community</h3>
         <% end %>
       </div>
       
