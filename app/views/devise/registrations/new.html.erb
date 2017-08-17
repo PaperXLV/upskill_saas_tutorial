@@ -1,39 +1,27 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 col-md-offset-8">
-      <div class="well">
+      <div class="text-center">
         <% if params[:plan] == '2' %>
-          <h2>Pro Account Sign Up Form</h2>
+          <h1>Pro Account</h1>
+          <h3>Sign up for the pro account for $10/month and gain access to the community, priority search, and contact information.</h3>
         <% elsif params[:plan] == '3' %>
-          <h2>John Cena Sign Up Form</h2>
+          <h1>John Cena Account</h1>
+          <h3>Sign up for the John Cena account and become a literal god for $50/month. Gain access to the community, priority search, contact information, and become John Cena himself.</h3>
         <% else %>
-          <h2>Basic Account Sign Up Form</h2>
+          <h1>Basic Account</h1>
+          <h3>Sign up for the free basic account and gain access to the community</h3>
         <% end %>
-        <h2>Sign up!</h2>
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
-        
-          <div class="field form-group">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Example@email.com' %>
-          </div>
-        
-          <div class="field form-group">
-            <%= f.label :password %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %><br />
-            <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Hunter123' %>
-          </div>
-        
-          <div class="field form-group">
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'Hunter123' %>
-          </div>
-        
-          <div class="actions form-group">
-            <%= f.submit "Submit", class: 'btn btn-primary' %>
-          </div>
+      </div>
+      
+      <div class="well">
+        <h2>Sign Up</h2>
+        <% if params[:plan] == '2' %>
+          <%= render "pro_form" %>
+        <% elsif params[:plan] == '3' %>
+          <%= render "cena_form" %>
+        <% else %>
+          <%= render "basic_form" %>
         <% end %>
         <%= render "devise/shared/links"%>
       </div>
