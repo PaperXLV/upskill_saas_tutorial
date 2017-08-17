@@ -1,7 +1,7 @@
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {id: 'cena_form'}) do |f| %>
   <%= devise_error_messages! %>
 
-  <%= hidden_field_tag 'plan', params[:plan] &>
+  <%= hidden_field_tag 'plan', params[:plan] %>
 
   <div class="field form-group">
     <%= f.label :email %><br />
@@ -39,6 +39,6 @@
   </div>
 
   <div class="actions form-group">
-    <%= f.submit "Submit", class: 'btn btn-primary' %>
+    <%= f.submit "Submit", class: 'btn btn-primary', id: 'form-submit-btn' %>
   </div>
 <% end %>
