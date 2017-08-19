@@ -12,11 +12,11 @@
                 <%= @user.profile.description %>
             </div>
             
-            <% if current_user.plan_id > 1 %>
+            <% if (current_user.plan_id > 1) || (current_user.id == params[:user_id]) %>
                 <div class="well profile-block profile-contact-info">
                     <h3>Premium Contact Info:</h3>
-                    <%= @user.profile.phone_number %>
-                    <%= @user.profile.contact_email %>
+                    <h5>Phone Number: <%= @user.profile.phone_number %></h5>
+                    <h5>Email: <%= @user.profile.contact_email %></h5>
                 </div>
             <% end %>
         </div>

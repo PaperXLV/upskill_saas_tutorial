@@ -1,19 +1,22 @@
 /* global $, */
 //Document ready
 $(document).on('turbolinks:load', function() {
-    var phone_field = $('#phone-input-field');
-    phone_field.mask('(000) 000-0000');
+    $('#phone-input-field').mask('(000) 000-0000');
+
+    var about_me = $('#about-me-field');
+    if (about_me.length > 0) {
+        var rows = about_me.rows;
+        var prevtextlength = about_me.textLength;
+        var currtextlength = prevtextlength;
+        
+        about_me.addEventListener('input', function() {
+            about_me.rows = fitToContent(about_me, rows);
+            rows = about_me.rows;
+            prevtextlength = currtextlength;
+        });
+    }
     
-    var about_me = $('#about-me-field')[0];
-    var rows = about_me.rows;
-    var prevtextlength = about_me.textLength;
-    var currtextlength = prevtextlength;
     
-    about_me.addEventListener('input', function() {
-        about_me.rows = fitToContent(about_me, rows);
-        rows = about_me.rows;
-        prevtextlength = currtextlength;
-    });
     
     
     function fitToContent(text, rows) {

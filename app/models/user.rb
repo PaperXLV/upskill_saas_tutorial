@@ -7,7 +7,6 @@ class User < ApplicationRecord
          
   belongs_to :plan
   has_one :profile
-  
   # If Pro user passes validations (email, pass, etc.),
   # then call Stripe and tell Stripe to set up a subscription
   # upon charging the customer's card.
