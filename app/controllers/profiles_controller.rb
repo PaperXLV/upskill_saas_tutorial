@@ -22,7 +22,16 @@ class ProfilesController < ApplicationController
   end
   
   def update
-    
+    # retrieve user and update their profile
+    @user = User.find( params[:user_id] )
+    @profile = @user.profile
+    if @profile.update_attributes(profile_params)
+      flash[:success] = "Profile updated!"
+      redirect_to user_path(id: params[:user_id] )
+    else
+      flash[:danger] = "Error with updating profile"
+      render action: :edit
+    end
   end
   
   # Whitelisting the params to use, prevents injecting
