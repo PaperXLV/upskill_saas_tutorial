@@ -50,6 +50,9 @@ gem 'figaro', '1.1.1'
 # Use JqueryMask for masks on form fields
 gem 'jquery_mask_rails'
 
+# Use Paperclip for Image Uploads
+gem 'paperclip', '4.3.6'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
