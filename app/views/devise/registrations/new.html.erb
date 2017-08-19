@@ -28,6 +28,7 @@
       
       <div class="well">
         <h2>Sign Up</h2>
+        <!-- renders the html from the form that needs to show up based on params -->
         <% if params[:plan] == '2' %>
           <%= render "pro_form" %>
         <% elsif params[:plan] == '3' %>

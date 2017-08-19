@@ -6,6 +6,8 @@
     <link href="//fonts.googleapis.com/css?family=Josefin+Sans:400,600,700" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- specifically need this for users.js to be able to use stripe functions. If we need to use js
+    from some gem, it's probably gonna need an include tag -->
     <%= javascript_include_tag "https://js.stripe.com/v2/", type: 'text/javascript' %>
     <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 
@@ -33,7 +35,7 @@
             <% if user_signed_in? %>
               <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn btn-danger" %>
             <% else %>
-              <%= link_to "Log In", new_user_session_path, class: 'btn btn-default navbar-btn btn-secondary' %>
+              <%= link_to "Log In", new_user_session_path, class: 'btn btn-default navbar-btn btn-outline-primary' %>
             <% end %>
           </div>
           <ul class="nav navbar-nav navbar-right">

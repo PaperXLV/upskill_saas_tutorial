@@ -5,6 +5,7 @@ $(document).on('turbolinks:load', function() {
     var cenaForm = $('#cena_form');
     var submitBtn = $('#form-submit-btn');
     
+    // So Stripe knows who we are and we can do calls to stripe
     Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content') );
 
     submitBtn.click(function(event) {
@@ -20,7 +21,7 @@ $(document).on('turbolinks:load', function() {
         //Use Stripe JS library to check for card errors.
         var error = false;
         
-        //Validate card number
+        //Validate card
         if (!Stripe.card.validateCardNumber(ccNum)) {
             error = true;
             alert('The credit card number appears to be invalid');

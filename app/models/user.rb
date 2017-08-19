@@ -12,9 +12,10 @@ class User < ApplicationRecord
   # Stripe responds back with customer data
   # Store customer.id as customer token and save the user.
   attr_accessor :stripe_card_token
+  # whitelist the card_token so we can look at it from here
   def save_with_subscription
     if valid?
-      #stripe documentation
+      #stripe gem, read the documentation
       customer = Stripe::Customer.create(description: email, plan: plan_id, card: stripe_card_token)
       self.stripe_customer_token = customer.id
       save!

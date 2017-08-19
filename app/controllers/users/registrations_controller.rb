@@ -4,7 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
    # save with special Stripe subscription funtion.
    # Otherwise Devise signs up user as usual.
    before_action :select_plan, only: :new
-   
+   # Called at the end of users.js, the script that hijacks our form submission. Normally would be called right on the submit button, but we need additional information/validation
    def create
       super do |resource|
          if params[:plan]
