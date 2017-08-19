@@ -1,27 +1,27 @@
 <%= form_for @profile, url: user_profile_path do |f| %>
     <div class="form-group">
         <%= f.label :first_name %>
-        <%= f.text_field :first_name, class: 'form-control' %>
+        <%= f.text_field :first_name, class: 'form-control', placeholder: 'Jane' %>
     </div>
     
     <div class="form-group">
         <%= f.label :last_name %>
-        <%= f.text_field :last_name, class: 'form-control' %>
+        <%= f.text_field :last_name, class: 'form-control', placeholder: 'Doe' %>
     </div>
     
     <div class="form-group">
         <%= f.label :job_title %>
-        <%= f.text_field :job_title, class: 'form-control' %>
+        <%= f.select :job_title, ['Developer', 'Entrepreneur', 'Investor', 'Other'], {}, class: 'form-control', placeholder: 'Software Developer' %>
     </div>
     
     <div class="form-group">
         <%= f.label :phone_number %>
-        <%= f.text_field :phone_number, class: 'form-control' %>
+        <%= f.telephone_field :phone_number, class: 'form-control', id: 'phone-input-field' %>
     </div>
     
     <div class="form-group">
         <%= f.label :contact_email %>
-        <%= f.text_field :contact_email, class: 'form-control' %>
+        <%= f.text_field :contact_email, class: 'form-control', value: current_user.email %>
     </div>
     
     <div class="form-group">
