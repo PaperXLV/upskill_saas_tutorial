@@ -19,6 +19,6 @@ class ProfilesController < ApplicationController
   # Whitelisting the params to use, prevents injecting
   private
     def profile_params
-      params.require(:profile).permit(:first_name, :last_name, :job_title, :phone_number, :contact_email, :description)
+      params.require(:profile).permit(:first_name, :last_name, :avatar, :job_title, :phone_number, :contact_email, :description)
     end
 end
