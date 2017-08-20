@@ -1,8 +1,30 @@
 <div class="container">
     <div class="row">
-        <div class = "col-md-8 com-md-offset-2">
-            <h1>DevMatch Community</h1>
-            <p>Welcome to the DevMatch community. Users must fill out a profile in order to be visible in the community</p>
+        <div class = "col-md-8 col-md-offset-2">
+            <div class="row">
+                <div class="col-md-7">
+                    <h1>DevMatch Community</h1>
+                    <p>Welcome to the DevMatch community. Users must fill out a profile in order to be visible in the community</p>
+                </div>
+                <div class="col-md-5 margin-top">
+                    <%= form_for @filter, class: 'form-horizontal' do |f| %>
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <%= f.select :filter, ['All', 'Developer', 'Entrepreneur', 'Investor', 'Other'], {}, class: 'form-control', placeholder: 'Software Developer' %>
+                                <%= f.submit "Filter", class: 'btn btn-default' %>
+                            </div>
+                        </div>
+                    <% end %>
+                    <%= form_for @search, class: 'form-horizontal' do |f| %>
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <%= f.text_field :search, class: 'form-control' %>
+                                <%= f.submit "Search", class: 'btn btn-default' %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
             <ul class="list-unstyled">
                 <% @users.each do |user| %>
                     <% if user.profile %>

@@ -8,5 +8,7 @@ class UsersController < ApplicationController
    
    def index
       @users = User.includes(:profile)
+      @filter = ""
+      @search = ""
    end
 end
