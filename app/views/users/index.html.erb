@@ -17,7 +17,12 @@
                                     <%= link_to user do %>
                                         <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
                                     <% end %>
-                                    <h5><%= user.profile.job_title %></h5>
+                                    <h5>
+                                        <%= user.profile.job_title %>
+                                        <% if user.plan_id > 1 %>
+                                            <span class="label label-danger">PRO</span>
+                                        <% end %>
+                                    </h5>
                                 </div>
                                 <div>
                                     <p><%= user.profile.description %></p>
