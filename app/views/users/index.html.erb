@@ -17,7 +17,8 @@
                 <% @users.each do |user| %>
                     <% if user.profile %>
                         <% if user.profile.job_title == params[:filter] || params[:filter] == 'All' || params[:filter] == nil %>
-                            <li>
+                            <% if check_search_to_name(params[:search], user.profile.first_name, user.profile.last_name) %>
+                                <li>
                                 <% if user == current_user %>
                                     <div class="well row blue-bg">
                                 <% else %>
@@ -45,7 +46,8 @@
                                         <p><%= user.profile.description %></p>
                                     </div>
                                 </div>
-                            </li>
+                            </li> 
+                            <% end %>
                         <% end %>
                     <% end %>
                 <% end %>
