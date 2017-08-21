@@ -8,7 +8,7 @@
                         <div class="form-group">
                             <%= label_tag(:seach, "Search") %>
                             <%= text_field_tag(:search, params[:search], :class => 'form-control') %>
-                            <%= select_tag(:filter, options_for_select(['All', 'Developer', 'Entrepreneur', 'Investor', 'Other'], params[:filter] == '' ? 'all' : params[:filter]), :class => 'form-control') %>
+                            <%= select_tag(:filter, options_for_select(['All', 'Developer', 'Entrepreneur', 'Investor', 'Other'], params[:filter] == nil ? 'all' : params[:filter]), :class => 'form-control') %>
                             <%= submit_tag("Filter", :class => 'btn btn-default') %>
                         </div>
                     <% end %>
@@ -16,35 +16,37 @@
             <ul class="list-unstyled">
                 <% @users.each do |user| %>
                     <% if user.profile %>
-                        <li>
-                            <% if user == current_user %>
-                                <div class="well row blue-bg">
-                            <% else %>
-                                <div class="well row <%= cycle('white-bg', '') %>">
-                            <% end %>
-                                <div class="col-sm-3 text-center">
-                                    <% if user.profile.avatar %>
+                        <% if user.profile.job_title == params[:filter] || params[:filter] == 'All' || params[:filter] == nil %>
+                            <li>
+                                <% if user == current_user %>
+                                    <div class="well row blue-bg">
+                                <% else %>
+                                    <div class="well row <%= cycle('white-bg', '') %>">
+                                <% end %>
+                                    <div class="col-sm-3 text-center">
+                                        <% if user.profile.avatar %>
+                                            <%= link_to user do %>
+                                                <%= image_tag user.profile.avatar.url, class: 'user-index-avatar' %>
+                                            <% end %>
+                                        <% end %>
+                                    </div>
+                                    <div>
                                         <%= link_to user do %>
-                                            <%= image_tag user.profile.avatar.url, class: 'user-index-avatar' %>
+                                            <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
                                         <% end %>
-                                    <% end %>
+                                        <h5>
+                                            <%= user.profile.job_title %>
+                                            <% if user.plan_id > 1 %>
+                                                <span class="label label-danger">PRO</span>
+                                            <% end %>
+                                        </h5>
+                                    </div>
+                                    <div>
+                                        <p><%= user.profile.description %></p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <%= link_to user do %>
-                                        <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
-                                    <% end %>
-                                    <h5>
-                                        <%= user.profile.job_title %>
-                                        <% if user.plan_id > 1 %>
-                                            <span class="label label-danger">PRO</span>
-                                        <% end %>
-                                    </h5>
-                                </div>
-                                <div>
-                                    <p><%= user.profile.description %></p>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                        <% end %>
                     <% end %>
                 <% end %>
             </ul>
