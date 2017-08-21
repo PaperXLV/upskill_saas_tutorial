@@ -26,14 +26,14 @@ module UsersHelper
                iterator = 0
                begin
                    cur.split("").each do |ch|
-                      if ch.downcase != first[iterator].downcase
+                      if ch.downcase != first[iterator] && ch.upcase != first[iterator]
                           matchfirst = false
                       end
                       iterator = iterator + 1
                    end
                    iterator = 0
                    cur.split("").each do |ch|
-                       if ch.downcase != last[iterator].downcase
+                       if ch.downcase != last[iterator] && ch.upcase != last[iterator]
                            matchlast = false
                        end
                        iterator = iterator + 1
