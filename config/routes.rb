@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # Makes the controller for registrations users/registrations
   # We have additional code there to handle the different plans
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :users, controllers: { registrations: 'users/registrations' }, path_names: { user_registration_path: '/user'}
   resources :users do
     resource :profile
   end
