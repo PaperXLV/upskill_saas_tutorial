@@ -37,8 +37,10 @@
                                         <% end %>
                                         <h5>
                                             <%= user.profile.job_title %>
-                                            <% if user.plan_id > 1 %>
+                                            <% if user.plan_id == 2 %>
                                                 <span class="label label-danger">PRO</span>
+                                            <% elsif user.plan_id == 3 %>
+                                                <span class="label label-danger">CENA</span>
                                             <% end %>
                                         </h5>
                                     </div>
